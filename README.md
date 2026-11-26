@@ -4,10 +4,6 @@ Minimal Neovim-style vertical scrolling for Chrome — **only** `gg`, `Shift+G`,
 
 [日本語 README](README.ja.md)
 
-## Why Scrollim?
-
-Full Vim browser extensions often hijack single-key shortcuts (`j`, `k`, `f`, `/`, etc.) that conflict with web apps like GitHub, Gmail, Notion, and X. **Scrollim** strips everything down to the 4 essential vertical navigation motions from Neovim so your browser stays fast, predictable, and conflict-free.
-
 ## Keybindings
 
 | Shortcut | Action |
