@@ -2,8 +2,6 @@
 
 Minimal Neovim-style vertical scrolling for Chrome — **only** `gg`, `Shift+G`, `Ctrl+u`, and `Ctrl+d`.
 
-[日本語 README](README.ja.md)
-
 ## Keybindings
 
 | Shortcut | Action |
