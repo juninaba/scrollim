@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scrollim</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <div class="brand">
+          <img
+            src="../icons/icon32.png"
+            alt=""
+            width="24"
+            height="24"
+            class="brand-icon"
+          />
+          <div class="brand-text">
+            <h1 class="brand-title">Scrollim</h1>
+            <span id="version-badge" class="version-badge">v0.1.0</span>
+          </div>
+        </div>
+        <label class="switch" title="Enable or disable Scrollim globally">
+          <input
+            id="global-enabled"
+            type="checkbox"
+            role="switch"
+            aria-label="Enable Scrollim globally"
+            checked
+            disabled
+          />
+          <span class="slider"></span>
+        </label>
+      </header>
+
+      <section id="site-card" class="card site-card">
+        <div class="site-info">
+          <span id="site-status-dot" class="status-dot status-dot--active"></span>
+          <div class="site-meta">
+            <span id="site-host" class="site-host">Loading…</span>
+            <span id="site-status-label" class="site-status-label">Active</span>
+          </div>
+        </div>
+        <button id="site-toggle-btn" class="site-btn" type="button" disabled>
+          Pause
+        </button>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Keybindings</h2>
+        <ul class="key-list">
+          <li class="key-row">
+            <span class="key-combo">
+              <kbd>g</kbd><kbd>g</kbd>
+            </span>
+            <span class="key-desc">Top of page</span>
+          </li>
+          <li class="key-row">
+            <span class="key-combo">
+              <kbd>Shift</kbd><span class="key-plus">+</span><kbd>G</kbd>
+            </span>
+            <span class="key-desc">Bottom of page</span>
+          </li>
+          <li class="key-row">
+            <span class="key-combo">
+              <kbd>Ctrl</kbd><span class="key-plus">+</span><kbd>u</kbd>
+            </span>
+            <span class="key-desc">Half-page up</span>
+          </li>
+          <li class="key-row">
+            <span class="key-combo">
+              <kbd>Ctrl</kbd><span class="key-plus">+</span><kbd>d</kbd>
+            </span>
+            <span class="key-desc">Half-page down</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card settings-card">
+        <h2 class="section-title">Settings</h2>
+        <div class="setting-row">
+          <div class="setting-label-group">
+            <label for="smooth-scroll" class="setting-label">Smooth scroll</label>
+            <span class="setting-hint">Respects reduced-motion preference</span>
+          </div>
+          <label class="switch switch--sm">
+            <input id="smooth-scroll" type="checkbox" role="switch" checked disabled />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-row setting-row--stack">
+          <div class="setting-range-header">
+            <label for="scroll-ratio" class="setting-label">Scroll distance</label>
+            <span id="scroll-ratio-value" class="ratio-value">50%</span>
+          </div>
+          <input
+            id="scroll-ratio"
+            class="range-input"
+            type="range"
+            min="25"
+            max="80"
+            step="5"
+            value="50"
+            disabled
+          />
+        </div>
+      </section>
+
+      <section id="disabled-hosts-card" class="card" hidden>
+        <h2 class="section-title">Paused sites</h2>
+        <ul id="disabled-hosts-list" class="host-list"></ul>
+      </section>
+
+      <footer class="footer">
+        Automatically paused while typing in inputs.
+      </footer>
+    </main>
+
+    <script src="../src/core.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

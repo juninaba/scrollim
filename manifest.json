@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Scrollim",
+  "short_name": "Scrollim",
+  "version": "0.1.0",
+  "description": "Minimal Neovim-style vertical scrolling for Chrome: only gg, Shift+G, Ctrl+u, and Ctrl+d.",
+  "homepage_url": "https://github.com/juninaba/scrollim",
+  "permissions": ["storage", "activeTab"],
+  "action": {
+    "default_title": "Scrollim",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/core.js", "src/scroller.js", "src/content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}

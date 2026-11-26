@@ -1,0 +1,23 @@
+{
+  "name": "scrollim",
+  "version": "0.1.0",
+  "description": "Minimal Neovim-style vertical scrolling for Chrome: only gg, Shift+G, Ctrl+u, and Ctrl+d.",
+  "private": true,
+  "license": "MIT",
+  "homepage": "https://github.com/juninaba/scrollim",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juninaba/scrollim.git"
+  },
+  "bugs": {
+    "url": "https://github.com/juninaba/scrollim/issues"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "icons": "python3 scripts/generate-icons.py",
+    "zip": "node scripts/package.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
